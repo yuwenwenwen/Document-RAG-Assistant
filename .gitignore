@@ -1,0 +1,49 @@
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Environment variables and API keys
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local databases and runtime data
+*.db
+*.sqlite3
+logs/
+sandbox_data/
+workspace/
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+
+# Vue / Vite
+node_modules/
+dist/
+.vite/
+
+# Node.js
+node_modules/
+frontend/node_modules/
+
+# User uploaded documents
+uploads/
+
+# RAG generated data
+data/
+vector_store/
+chroma_db/
+
+# Windows
+Thumbs.db
+
+# Local test documents
+test_data/

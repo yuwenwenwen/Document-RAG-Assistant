@@ -37,8 +37,8 @@ def test_chunk_document():
 
     chunks = chunk_document(
         pages,
-        chunk_size=1000,
-        overlap=200,
+        chunk_size=500,
+        overlap=100,
     )
 
     assert len(chunks) == 3

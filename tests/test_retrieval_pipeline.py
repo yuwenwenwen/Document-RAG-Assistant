@@ -15,8 +15,8 @@ def test_retrieval_pipeline():
     # 3. Split document into chunks
     chunks = chunk_document(
         pages,
-        chunk_size=1000,
-        overlap=200,
+        chunk_size=500,
+        overlap=100,
     )
 
     # 4. Create embeddings
@@ -44,10 +44,19 @@ def test_retrieval_pipeline():
 
     query_embedding = embedder.encode([query])[0]
 
+    print("\nAll chunks:")
+
+    for chunk in chunks:
+        print("-" * 60)
+        print(
+            f"Chunk {chunk['chunk_id']} | "
+            f"Page {chunk['page']}"
+        )
+        print(chunk["text"])
     # 7. Retrieve relevant chunks
     results = vector_store.search(
         query_embedding,
-        top_k=3,
+        top_k=len(chunks),
     )
 
     assert len(results) > 0

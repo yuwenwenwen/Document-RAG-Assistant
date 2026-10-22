@@ -50,7 +50,7 @@ document-rag-assistant/
 ├── main.py
 ├── requirements.txt
 └── README.md
-
+```
 ## for yuwen
 
 ### Linux 指令

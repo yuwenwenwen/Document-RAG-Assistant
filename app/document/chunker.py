@@ -29,3 +29,31 @@ def chunk_text(
         start += chunk_size - overlap
 
     return chunks
+
+
+def chunk_document(
+    pages: list[dict],
+    chunk_size: int = 1000,
+    overlap: int = 200,
+) -> list[dict]:
+
+    chunks = []
+    chunk_id = 0
+
+    for page in pages:
+        page_chunks = chunk_text(
+            page["text"],
+            chunk_size=chunk_size,
+            overlap=overlap,
+        )
+
+        for text in page_chunks:
+            chunks.append({
+                "chunk_id": chunk_id,
+                "page": page["page"],
+                "text": text,
+            })
+
+            chunk_id += 1
+
+    return chunks

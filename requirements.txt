@@ -4,3 +4,6 @@ python-multipart
 python-dotenv
 PyMuPDF
 pytest
+torch
+sentence-transformers
+faiss-cpu
